@@ -11,7 +11,8 @@ const chatCompletion = async (prompt) => {
     try {
         const response = await openai.createChatCompletion(
             {
-                model: 'gpt-3.5-turbo',
+                //model: 'gpt-3.5-turbo',
+                model: process.env.CHATGPT_MODEL_NAME,
                 messages: [
                     { "role": "system", "content": "You are a helpful assistant." },
                     { "role": "user", "content": prompt }
